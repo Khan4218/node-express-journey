@@ -14,6 +14,7 @@ I'll be tracking my progress, writing code, and organizing everything by topic t
 - [x] Introduction & Setup
 - [x] What is Node.js
 - [x] Install Node / REPL / CLI
+- [x] Globals
 ### 🔜 Up Next
 - [ ] Globals & Modules
 - [ ] Built-in Modules (`os`, `path`, `fs`, `http`)
