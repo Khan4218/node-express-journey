@@ -12,3 +12,13 @@
 - **clearTimeout()** - Cancels a timeout
 - **clearInterval()** - Cancels an interval
 - **console** - Logging tool (console.log, console.error, etc.)
+
+
+
+
+
+
+
+
+
+
