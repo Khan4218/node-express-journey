@@ -41,7 +41,25 @@ Challenge:
     res.setHeader('Content-Type', 'application/json')
     res.statusCode = 200
     res.end(JSON.stringify(destinations))
-  }else {
+  }else if (req.url.startsWith('/api/continent') && req.method === 'GET') {
+    const parts = req.url.split('/')    
+    const continentName = parts[parts.length - 1]
+    const filtered = destinations.filter(item => item.continent.toLowerCase() === continentName.toLowerCase())
+  
+    res.setHeader('Content-Type', 'application/json')
+    res.statusCode = 200
+    res.end(JSON.stringify(filtered))
+
+  /*
+  Challenge:
+  1. Check if the url starts with “/api/continent”.
+    (Is there a JS method that allows you to check what a string starts with?)
+
+  2. If it does, serve only items from that continent.
+    (How can you get to what comes after the final slash?)
+    (What method can you use to filter data?)
+  */
+    }else {
     res.setHeader('Content-Type', 'application/json')
     res.statusCode = 404
     res.end(JSON.stringify({error: "not found", message: "The requested route does not exist"}))
