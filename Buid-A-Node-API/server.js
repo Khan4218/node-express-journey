@@ -38,6 +38,8 @@ Challenge:
 */
 
   if (req.url === '/api' && req.method === 'GET') {
+    res.setHeader('Content-Type', 'application/json')
+    res.statusCode = 200
     res.end(JSON.stringify(destinations))
   }
 })
