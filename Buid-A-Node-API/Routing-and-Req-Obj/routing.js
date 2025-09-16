@@ -8,7 +8,7 @@ const server = http.createServer((req , res) => {
   if(req.url === "/api" && req.method === "GET" ) {
    res.end("Hello from my server and it is a GET request")
   }else{
-    res.end(`it is a ${req.method} request`);
+    console.log(`it is a ${req.method} request`);
     
   }
   
