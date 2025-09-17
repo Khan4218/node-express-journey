@@ -2,6 +2,7 @@ import http from 'node:http'
 import { getDataFromDB } from './database/db.js'
 import {filterData } from './utils/filterData.js'
 import { sendJson } from './utils/sendJson.js'
+import { getDataByQueryparams } from './utils/getDataByQueryParams.js'
 
 const PORT = 3000
 
@@ -13,10 +14,8 @@ const server = http.createServer(async (req, res) => {
   const queryObj = Object.fromEntries(urlObj.searchParams)
 
   if (urlObj.pathname === '/api' && req.method === 'GET') {
-    let filteredDestinations = destinations
-    console.log(queryObj);
-    
-    sendJson(res, filteredDestinations)
+    let filteredData = getDataByQueryparams(destinations, queryObj)
+    sendJson(res, filteredData)
 
   } else if (req.url.startsWith('/api/') && req.method === 'GET') {
     const parts = req.url.split('/')    // ["", "api", "continent", "Europe"]
