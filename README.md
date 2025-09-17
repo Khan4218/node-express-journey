@@ -1,45 +1,62 @@
-# 📘 Node.js & Express.js Full Course – Learning Journey
+# Node.js Projects
 
-This is my personal learning repo as I go through the **Node.js and Express.js - Full Course** on YouTube.
+This repository contains projects I built while learning and practicing Node.js.  
+It includes two main parts:  
 
-I'll be tracking my progress, writing code, and organizing everything by topic to stay consistent and learn effectively.
-
----
-
-## 📊 Progress Tracker
-
-**Course Completion:** ![Progress](https://progress-bar.dev/5/?title=Just%20Getting%20Started)
-
-### ✔️ Completed
-- [x] Introduction & Setup
-- [x] What is Node.js
-- [x] Install Node / REPL / CLI
-- [x] Globals
-### 🔜 Up Next
-- [ ] Globals & Modules
-- [ ] Built-in Modules (`os`, `path`, `fs`, `http`)
-- [ ] Sync vs Async
-- [ ] HTTP Module & Server
-- [ ] NPM & Tools (nodemon, packages)
-- [ ] Event Loop & Async Patterns
-- [ ] Events & Event Emitters
-- [ ] Streams
-- [ ] HTTP Project Setup
-- [ ] Express Basics
-- [ ] Express Static & JSON
-- [ ] Route Params & Query Strings
-- [ ] Middleware Functions
-- [ ] HTTP Methods (GET, POST, PUT, DELETE)
-- [ ] Express Router & Controllers
+1. **Build a Node API** ✅ (Completed)  
+2. **Build a Fullstack Node App** 🚀 (In Progress)
 
 ---
 
-## 🗂️ Structure
+## 📚 Part 1: Build a Node API (Completed)
+In this section, I learned how to use Node.js without frameworks to build and structure APIs.  
+Key topics covered:
+- Core Node.js modules (`http`, `fs`, `url`, `path`)
+- Creating a server with the `http` module
+- Handling requests and responses
+- Parsing URLs and query parameters
+- Serving JSON responses
+- Modularizing code with utility functions
+- Filtering data based on client query params
+- Designing clean and reusable API endpoints
 
-Each folder in this repo matches a section from the course, with commits documenting my learning step by step.
+**Mini Project:**  
+Built an `/api` endpoint that serves destination data and supports query filters such as:  
+- `country`  
+- `continent`  
+- `is_open_to_public`
 
 ---
 
-## 🎯 Goal
+## 🚀 Part 2: Build a Fullstack Node App (In Progress)
+Next, I’ll be learning how to:
+- Connect Node.js backend with a frontend
+- Work with databases for persistent storage
+- Handle routes and state between client & server
+- Deploy a fullstack Node application
 
-To build a strong foundation in backend development using Node.js and Express.js, and to confidently create full APIs from scratch.
+---
+
+## 🛠 Tech Stack
+- **Node.js** (no external frameworks in Part 1)  
+- JavaScript (ES Modules)  
+- JSON for mock data (Part 1)  
+- Frontend integration (coming in Part 2)
+
+---
+
+## 💡 How to Run (Part 1)
+1. Clone this repo  
+   ```bash
+   git clone <your-repo-url>
+   cd scrimba-node-course
+
+2.	Run the server
+    node server.js
+
+3.	Visit the API:
+http://localhost:3000/api
+http://localhost:3000/api?country=India
+http://localhost:3000/api?continent=Europe&is_open_to_public=true
+
+✨ Stay tuned for updates as I move into Part 2: Fullstack Node App!
