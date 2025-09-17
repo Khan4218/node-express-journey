@@ -1,0 +1,21 @@
+{
+  "name": "from-the-other-side",
+  "version": "1.0.0",
+  "description": "A platform for sharing ghostly encounters",
+  "homepage": "https://github.com/Khan4218/node-express-journey#readme",
+  "bugs": {
+    "url": "https://github.com/Khan4218/node-express-journey/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Khan4218/node-express-journey.git"
+  },
+  "license": "ISC",
+  "author": "Mir Akbar Ali Khan",
+  "type": "module",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  }
+}
