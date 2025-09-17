@@ -7,9 +7,16 @@ const PORT = 3000
 
 const server = http.createServer(async (req, res) => {
   const destinations = await getDataFromDB()
+  const urlObj = new URL(req.url, `http://${req.headers.host}`)
+  console.log(urlObj);
+  
+  const queryObj = Object.fromEntries(urlObj.searchParams)
 
-  if (req.url === '/api' && req.method === 'GET') {
-    sendJson(res, destinations)
+  if (urlObj.pathname === '/api' && req.method === 'GET') {
+    let filteredDestinations = destinations
+    console.log(queryObj);
+    
+    sendJson(res, filteredDestinations)
 
   } else if (req.url.startsWith('/api/') && req.method === 'GET') {
     const parts = req.url.split('/')    // ["", "api", "continent", "Europe"]
