@@ -2,8 +2,7 @@ import http from "node:http"
 
 const PORT = 8000
 const server = http.createServer((req, res) => {
-  res.setHeader('Content-Type', 'text/html')
-  res.statusCode = 200
+res.writeHead(200, {'Content-Type': 'text/html', 'Access-Control-Allow-Methods': 'GET'})
   res.end('<html><h1>The server is working</h1></html>')
 })
 
