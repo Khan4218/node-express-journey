@@ -9,9 +9,9 @@ const PORT = 2000
 
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
-
 const server = http.createServer(async(req, res)=> {
-   await serveStatic(__dirname,res)
+  const publicDir = path.join(__dirname, "../public")
+   await serveStatic(req,publicDir,res)
 })
 
 server.listen(PORT, () => console.log(`connected on port: ${PORT}`))
