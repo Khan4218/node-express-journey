@@ -19,7 +19,7 @@ export async function serveStatic(req,res, publicDir) {
   } catch (err) {
     if(err.code === "ENOENT") {
     try{
-      const notFoundPage = fs.readFile(publicDir, "404.html")
+      const notFoundPage = await fs.readFile(path.join(publicDir, "404.html"))
       sendResponse(res, 404, "text/html", notFoundPage)
     }catch{
      sendResponse(res, 404, 'text/html', '<h1>404 Not Found</h1>')
