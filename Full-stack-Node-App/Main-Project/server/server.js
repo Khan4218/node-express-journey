@@ -3,7 +3,7 @@ import path from 'node:path'
 import { serveStatic } from '../utils/serveStatic.js'
 import { fileURLToPath } from 'node:url'
 import { getData } from '../utils/getData.js'
-import { handleRoutes } from '../handlers/handleRoutes.js'
+import { handleGet, handlePost } from '../handlers/handleRoutes.js'
 
 const PORT = 8000
 
@@ -14,8 +14,12 @@ const rootDir = path.join(__dirname, '../public')
 
 const server = http.createServer(async (req, res) => {
   if(req.url === "/api" && req.method === "GET") {
-   await handleRoutes(res)
-  }else{
+   await handleGet(res)
+  }
+  else if(req.url === "/api" && req.method === "POST") {
+   await handlePost(req, res)
+  }
+  else if(!req.url.startsWith('/api')){
     return await serveStatic(req, res, rootDir)
   }
   
