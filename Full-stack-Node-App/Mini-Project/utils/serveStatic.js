@@ -10,7 +10,20 @@ export const serveStatic = async (req, publicDir, res) => {
         const contentType = getContentType(ext)
         sendResponse(res, 200, contentType, content)
     } catch (error) {
-        console.log(error);
+        if(error.code === "ENOENT") {
+    try{
+      const notFoundPage = await fs.readFile(path.join(publicDir, "404.html"))
+      sendResponse(res, 404, "text/html", notFoundPage)
+    }catch{
+     sendResponse(res, 404, 'text/html', '<h1>404 Not Found</h1>')
+    }
+    }else{
+      const errorHtml = `<html><h1>Server Error: ${error.code}</h1></html>`
+      sendResponse(res,505,'text/html',errorHtml)
+      
+    }
         
     }
 }
+
+

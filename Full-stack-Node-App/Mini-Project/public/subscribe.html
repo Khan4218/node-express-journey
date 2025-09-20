@@ -3,8 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="RetroTech - Your hub for vintage technology">
     <link rel="stylesheet" href="./index.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -20,31 +19,26 @@
         <h1>Retro<span>Tech</span></h1>
         <nav aria-label="Main navigation">
             <a href="/">Home</a>
-            <a href="about.html">About</a>
+            <a href="./about.html">About</a>
             <a href="./subscribe.html">Subscribe</a>
         </nav>
     </header>
+
     <main>
-        <article class="product-card" aria-labelledby="product-name">
-            <img src="images/gameboy.png" alt="gameboy console">
-            <h3 id="product-name">Original Gameboy</h3>
-            <p>Price: $199.99</p>
-        </article>
-        <article class="product-card" aria-labelledby="product-name">
-            <img src="images/floppydiskset.png" alt="Set of floppy disks">
-            <h3 id="product-name">Floppy Disk Set</h3>
-            <p>Price: $9.99</p>
-        </article>
-        <article class="product-card" aria-labelledby="product-name">
-            <img src="images/zxspectrum.png" alt="ZX Spectrum">
-            <h3 id="product-name">ZX Spectrum</h3>
-            <p>Price: $245.99</p>
-        </article>
+        <h2>Subscribe</h2>
+        <p class="subscribe-txt">
+            Join our mailing list! Be the first to get notified when new (old) stock comes in!
+        </p>
+        <section class="email-signup">
+            <label for="email-input">Email:</label>
+            <input type="email" id="email-input" placeholder="retro@oldskool.com">
+            <button id="sub-btn">send</button>
+        </section>
+        <img src="images/retrotech.png" alt="gameboy console" class="about-img">
     </main>
 
     <footer>
         <p>&copy; 2025 RetroTech. All rights reserved.</p>
     </footer>
 </body>
-
-</html>
+<script type="module" src="./index.js"></script>
