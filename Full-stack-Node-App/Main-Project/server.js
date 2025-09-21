@@ -5,7 +5,7 @@ import { fileURLToPath } from 'node:url'
 import { getData } from './utils/getData.js'
 import { handleGet, handlePost, handleNews} from './handlers/handleRoutes.js'
 
-const PORT = 8000
+const PORT = process.env.PORT || 8000
 
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
